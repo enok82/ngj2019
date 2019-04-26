@@ -39,3 +39,12 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+Assets/FMODStudioCache.asset
+Assets/StreamingAssets/*.bank
+fmod.log
+fmod_editor.log
