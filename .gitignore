@@ -1,17 +1,17 @@
 ###
 # Unity folders and files
 ###
-[Aa]ssets/AssetStoreTools*
-[Bb]uild/
-[Ll]ibrary/
-[Ll]ocal[Cc]ache/
-[Oo]bj/
-[Tt]emp/
-[Uu]nityGenerated/
+unity/[Aa]ssets/AssetStoreTools*
+unity/[Bb]uild/
+unity/[Ll]ibrary/
+unity/[Ll]ocal[Cc]ache/
+unity/[Oo]bj/
+unity/[Tt]emp/
+unity/[Uu]nityGenerated/
 # file on crash reports
-sysinfo.txt
+unity/sysinfo.txt
 # Unity3D generated meta files
-*.pidb.meta
+unity/*.pidb.meta
 
 ###
 # VS/MD solution and project files
@@ -31,20 +31,19 @@ sysinfo.txt
 ###
 # OS generated
 ###
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
+unity/.DS_Store
+unity/.DS_Store?
+unity/._*
+unity/.Spotlight-V100
+unity/.Trashes
+unity/Icon?
+unity/ehthumbs.db
+unity/Thumbs.db
 
 # JetBrains Rider
 .idea/
 *.sln.iml
 
-Assets/FMODStudioCache.asset
-Assets/StreamingAssets/*.bank
-fmod.log
-fmod_editor.log
+unity/Assets/FMODStudioCache.asset
+unity/Assets/StreamingAssets/*.bank
+*.log
