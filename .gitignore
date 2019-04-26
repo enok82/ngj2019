@@ -17,16 +17,16 @@ unity/*.pidb.meta
 # VS/MD solution and project files
 ###
 #[Ee]xportedObj/
-#*.booproj
-#*.csproj
-#*.sln
-#*.suo
-#*.svd
-#*.unityproj
-#*.user
-#*.userprefs
-#*.pidb
-#.DS_Store
+*.booproj
+*.csproj
+*.sln
+*.suo
+*.svd
+*.unityproj
+*.user
+*.userprefs
+*.pidb
+.DS_Store
 
 ###
 # OS generated
@@ -43,6 +43,9 @@ unity/Thumbs.db
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# VS
+unity/.vs
 
 unity/Assets/FMODStudioCache.asset
 unity/Assets/StreamingAssets/*.bank
