@@ -60,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\Sound\EventPositionConfiner.cs" />
+    <Compile Include="Assets\Scripts\Sound\FmodEvent.cs" />
+    <Compile Include="Assets\Scripts\Sound\SoundAnimationHandler.cs" />
     <Compile Include="Assets\Tutorial_Info\Scripts\Readme.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/jeppe/Unity Stuff/ngj2019/unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

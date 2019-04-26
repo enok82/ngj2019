@@ -77,6 +77,11 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="SimpleCameraController.cs" t="Include" />
+          <e p="Sound" t="Include">
+            <e p="EventPositionConfiner.cs" t="Include" />
+            <e p="FmodEvent.cs" t="Include" />
+            <e p="SoundAnimationHandler.cs" t="Include" />
+          </e>
         </e>
         <e p="Tutorial_Info" t="Include">
           <e p="Scripts" t="Include">
