@@ -41,10 +41,10 @@ ehthumbs.db
 Thumbs.db
 
 # JetBrains Rider
-.idea/
+unity/.idea/
 *.sln.iml
 
 Assets/FMODStudioCache.asset
 Assets/StreamingAssets/*.bank
-fmod.log
-fmod_editor.log
+*.log
+

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
+  HasSourceProject: 0
+  HasPlatforms: 0
   sourceProjectPath: 
   SourceProjectPathUnformatted: 
-  SourceBankPathUnformatted: 
+  SourceBankPathUnformatted: /Users/jeppe/Unity Stuff/ngj2019/FMOD_Banks/Desktop
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
