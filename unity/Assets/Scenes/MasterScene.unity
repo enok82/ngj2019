@@ -1248,5 +1248,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3337358311881477761, guid: 21b55a7c0b89d9947be74707a3437aa6,
+        type: 3}
+      propertyPath: finishColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337358311881477761, guid: 21b55a7c0b89d9947be74707a3437aa6,
+        type: 3}
+      propertyPath: finishColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337358311881477761, guid: 21b55a7c0b89d9947be74707a3437aa6,
+        type: 3}
+      propertyPath: levelTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 1843ad95827b7e64fbd6727de497f024, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21b55a7c0b89d9947be74707a3437aa6, type: 3}
