@@ -16,11 +16,15 @@ public class PlayerMovement : MonoBehaviour
     public int playerTurnSpeed;
 
     public bool dashing;
-    public bool dashOnCoolDown;
+    public bool dashCoolingDown;
     public Vector3 playerPushedMovement;
     public float playerPushedDragCoefficient;
 
     public float startDirectionAngle;
+
+    public GameObject deathSpray;
+
+    public GameObject endGameConfetti;
 
     private float wantedDirectionAngle;
 
@@ -28,20 +32,30 @@ public class PlayerMovement : MonoBehaviour
 
     public GameManager gameManager;
 
+    public Transform spawnHelper;
+
+    private Animator anim;
+
+    private Rigidbody playerRigidbody;
+
     void Awake()
     {
         playerPushedMovement = new Vector3(0, 0, 0);
         wantedDirectionAngle = startDirectionAngle;
         dashing = false;
-        dashOnCoolDown = false;
+        dashCoolingDown = false;
+        playerRigidbody = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float turn = Input.GetAxis(playerRightAxis) - Input.GetAxis(playerLeftAxis);
-        float walk = Input.GetAxis(playerLeftAxis) + Input.GetAxis(playerRightAxis);
+        float turn = (Input.GetAxis(playerRightAxis) - Input.GetAxis(playerLeftAxis));
+        float walk = -(Input.GetAxis(playerLeftAxis) + Input.GetAxis(playerRightAxis));
         float dash = Mathf.Max(Input.GetAxis(playerLeftDashAxis), Input.GetAxis(playerRightDashAxis));
+        
+        anim.SetFloat("Speed", Mathf.Abs(walk));
 
         Vector3 moveVector;
 
@@ -49,13 +63,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (!dashing)
         {
-            if (dash > 0 && !dashOnCoolDown)
+            if (dash > 0 && !dashCoolingDown)
             {
-                dashing = true;
-                dashOnCoolDown = true;
-
-                Invoke("DashTime", playerDashTime);
-                Invoke("DashCoolDown", playerDashCoolDownTime);
+                StartDashing();
             }
 
             wantedDirectionAngle += turn * playerTurnSpeed;
@@ -76,34 +86,32 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            moveVector = new Vector3(0, 0, -1) * playerDashSpeed;
+            moveVector = new Vector3(0, 0, 1) * playerDashSpeed;
         }
 
-        GetComponent<Rigidbody>().AddForce((wantedDirectionQuaternion * moveVector));
+        playerRigidbody.AddForce((wantedDirectionQuaternion * moveVector));
     }
 
     void DashCoolDown()
     {
-        dashOnCoolDown = false;
+        dashCoolingDown = false;
     }
 
     void DashTime()
     {
-        dashing = false;
+        StopDashing();
     }
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(tag + " boom " + other.tag);
-
         switch (other.tag)
         {
             case "Player":
                 if (dashing)
                 {
-                    GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                    playerRigidbody.velocity = new Vector3(0, 0, 0);
 
-                    otherPlayer.playerPushedMovement = transform.forward * playerDashSpeed;
+                    otherPlayer.playerPushedMovement = -transform.forward * playerDashSpeed;
 
                     dashing = false;
                 }
@@ -121,6 +129,54 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        if (deathSpray)
+        {
+            Instantiate(deathSpray, transform.position, transform.rotation); // Expect auto destroy
+        }
+
+        Respawn();
+    }
+
+    public void Restart()
+    {
+        if (endGameConfetti)
+        {
+            Instantiate(endGameConfetti, transform.position, transform.rotation); // Expect auto destroy
+        }
+        
+        Respawn();
+    }
+
+    public void Respawn()
+    {
+        if(spawnHelper)
+        {
+            if (deathSpray)
+            {
+                Instantiate(deathSpray, spawnHelper.position, spawnHelper.rotation); // Expect auto destroy
+            }
+
+            playerRigidbody.position = spawnHelper.position;
+            playerRigidbody.velocity = new Vector3(0, 0, 0);
+            StopDashing();
+        }
+    }
+
+    void StopDashing()
+    {
+        anim.SetBool("Push", false);
+        anim.SetBool("NotPush", true);
+        dashing = false;
+    }
+
+    void StartDashing()
+    {
+        anim.SetBool("Push", true);
+        anim.SetBool("NotPush", false);
+        dashing = true;
+        dashCoolingDown = true;
+
+        Invoke("DashTime", playerDashTime);
+        Invoke("DashCoolDown", playerDashCoolDownTime);
     }
 }

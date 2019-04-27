@@ -1513,7 +1513,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5116387939892724525}
   - component: {fileID: 2993500089343979095}
-  - component: {fileID: 6150597758737387634}
   m_Layer: 0
   m_Name: character2
   m_TagString: Untagged
@@ -1560,20 +1559,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &6150597758737387634
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8167935852390969662}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.1
-  m_Height: 0.51
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.24, z: 0}
 --- !u!1 &8170621153026098523
 GameObject:
   m_ObjectHideFlags: 0
