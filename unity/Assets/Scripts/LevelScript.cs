@@ -17,12 +17,16 @@ public class LevelScript : MonoBehaviour
 
 	public Texture2D levelTexture;
 
+    private Animator anim;
+
 
 	void Start ()
 	{
 		levelWidth = levelTexture.width;
 		levelHeight = levelTexture.height;
-		LoadLevel ();	
+		LoadLevel ();
+        anim = GetComponent<Animator>();
+
 	}
 	
 
@@ -52,5 +56,6 @@ public class LevelScript : MonoBehaviour
 			}
 		}
 	}
-    
+   
+
 }
