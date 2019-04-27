@@ -9,11 +9,13 @@ public class LevelScript : MonoBehaviour
 
 	public GameObject walkableTile;
 	public GameObject notWalkableTile;
+    public GameObject finishTile;
 
 	private Color[] tileColors;
 
 	public Color walkableColor;
 	public Color notWalkableColor;
+    public Color finishColor;
 
 	public Texture2D levelTexture;
 
@@ -53,8 +55,15 @@ public class LevelScript : MonoBehaviour
                     clone.tag = "notWalkable";
                     clone.name = "Not Walkable Tile" + x + z;
                     clone.transform.parent = this.transform;
-                }			
-			}
+                }
+                if (tileColors[x + z * levelWidth] == finishColor)
+                {
+                    GameObject clone = Instantiate(finishTile, new Vector3(transform.position.x + x, 0, transform.position.z + z), Quaternion.identity);
+                    clone.tag = "finishTile";
+                    clone.name = "Finish Tile" + x + z;
+                    clone.transform.parent = this.transform;
+                }
+            }
 		}
 	}
    
