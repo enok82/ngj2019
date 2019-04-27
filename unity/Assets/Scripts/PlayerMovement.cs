@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public float startDirectionAngle;
 
     public int deathCount;
+    public bool hasWon;
 
     public GameObject deathSpray;
 
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         deathCount = 0;
+        hasWon = false;
         playerPushedMovement = new Vector3(0, 0, 0);
         wantedDirectionAngle = startDirectionAngle;
         dashing = false;
@@ -146,6 +148,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Respawn();
+    }
+
+    public void Win()
+    {
+        hasWon = true;
     }
 
     public void Restart()
