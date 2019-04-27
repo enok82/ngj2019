@@ -42,7 +42,7 @@ public class LevelScript : MonoBehaviour
 			{
 				if (tileColors [x + z * levelWidth] == walkableColor) 
 				{	
-					GameObject clone = Instantiate (walkableTile, new Vector3 (transform.position.x + x, 0, transform.position.z + z), Quaternion.identity);
+					GameObject clone = Instantiate (notWalkableTile, new Vector3 (transform.position.x + x, 0, transform.position.z + z), Quaternion.identity);
                     clone.tag = "walkable";
                     clone.name = "Walkable Tile" + x + z;
                     clone.transform.parent = this.transform;
@@ -56,9 +56,10 @@ public class LevelScript : MonoBehaviour
                     clone.name = "Not Walkable Tile" + x + z;
                     clone.transform.parent = this.transform;
                 }
+
                 if (tileColors[x + z * levelWidth] == finishColor)
                 {
-                    GameObject clone = Instantiate(finishTile, new Vector3(transform.position.x + x, 0, transform.position.z + z), Quaternion.identity);
+                    GameObject clone = Instantiate(notWalkableTile, new Vector3(transform.position.x + x, 0, transform.position.z + z), Quaternion.identity);
                     clone.tag = "finishTile";
                     clone.name = "Finish Tile" + x + z;
                     clone.transform.parent = this.transform;

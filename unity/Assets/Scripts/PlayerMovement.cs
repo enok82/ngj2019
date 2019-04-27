@@ -31,9 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private float wantedDirectionAngle;
 
     public PlayerMovement otherPlayer;
-
-    public GameManager gameManager;
-
+    
     public Transform spawnHelper;
 
     private Animator anim;
@@ -42,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        deathCount = 0;
         playerPushedMovement = new Vector3(0, 0, 0);
         wantedDirectionAngle = startDirectionAngle;
         dashing = false;
@@ -106,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
         switch (other.tag)
         {
             case "Player":
@@ -119,12 +119,16 @@ public class PlayerMovement : MonoBehaviour
                 }
 
                 break;
-            case "Walkable":
-                gameManager.SteppedOnWalkableTile(other, this);
+            case "walkable":
+                GameManager.Instance.SteppedOnWalkableTile(other, this);
 
                 break;
-            case "NotWalkable":
-                gameManager.SteppedOnNonWalkableTile(other, this);
+            case "notWalkable":
+                GameManager.Instance.SteppedOnNonWalkableTile(other, this);
+
+                break;
+            case "finishTile":
+                GameManager.Instance.SteppedOnFinishTile(other, this);
 
                 break;
             default:
@@ -134,6 +138,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die()
     {
+        deathCount++;
+
         if (deathSpray)
         {
             Instantiate(deathSpray, transform.position, transform.rotation); // Expect auto destroy
@@ -160,7 +166,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 Instantiate(deathSpray, spawnHelper.position, spawnHelper.rotation); // Expect auto destroy
             }
-
+            if(!playerRigidbody)
+            {
+                Debug.Log("Issues with RigidBody");
+            }
             playerRigidbody.position = spawnHelper.position;
             playerRigidbody.velocity = new Vector3(0, 0, 0);
             StopDashing();

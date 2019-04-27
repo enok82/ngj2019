@@ -65,6 +65,11 @@ public class GameManager : MonoBehaviour
        
     }
 
+    public void SteppedOnFinishTile(Collider tile, PlayerMovement actor)
+    {
+        GameOver();
+
+    }
 
     public void RegisterPlayer(GameObject playerOne, GameObject playerTwo)
     {
