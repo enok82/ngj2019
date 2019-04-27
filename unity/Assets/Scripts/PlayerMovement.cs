@@ -18,21 +18,22 @@ public class PlayerMovement : MonoBehaviour
     public bool dashing;
     public bool dashOnCoolDown;
     public Vector3 playerPushedMovement;
+    public float playerPushedDragCoefficient;
 
     public float startDirectionAngle;
 
     private float wantedDirectionAngle;
-    private CharacterController playerController;
 
     public PlayerMovement otherPlayer;
-    
+
+    public GameManager gameManager;
+
     void Awake()
     {
         playerPushedMovement = new Vector3(0, 0, 0);
         wantedDirectionAngle = startDirectionAngle;
         dashing = false;
         dashOnCoolDown = false;
-        playerController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         float turn = Input.GetAxis(playerRightAxis) - Input.GetAxis(playerLeftAxis);
         float walk = Input.GetAxis(playerLeftAxis) + Input.GetAxis(playerRightAxis);
         float dash = Mathf.Max(Input.GetAxis(playerLeftDashAxis), Input.GetAxis(playerRightDashAxis));
-        
+
         Vector3 moveVector;
 
         Quaternion wantedDirectionQuaternion = Quaternion.Euler(0, wantedDirectionAngle, 0);
@@ -61,13 +62,13 @@ public class PlayerMovement : MonoBehaviour
 
             transform.rotation = Quaternion.Slerp(transform.rotation, wantedDirectionQuaternion, 1);
 
-            moveVector = (new Vector3(0, 0, walk) * playerWalkSpeed / 10) + playerPushedMovement;
+            moveVector = (new Vector3(0, 0, walk) * playerWalkSpeed) + playerPushedMovement;
 
-            if(playerPushedMovement.magnitude > 0)
+            if (playerPushedMovement.magnitude > 0)
             {
-                playerPushedMovement -= playerPushedMovement.normalized / 10;
+                playerPushedMovement -= playerPushedMovement * playerPushedDragCoefficient;
 
-                if(playerPushedMovement.magnitude < 0.1)
+                if (playerPushedMovement.magnitude < 0.1)
                 {
                     playerPushedMovement = new Vector3(0, 0, 0);
                 }
@@ -75,10 +76,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            moveVector = new Vector3(0, 0, -1) * playerDashSpeed / 10;
+            moveVector = new Vector3(0, 0, -1) * playerDashSpeed;
         }
-        
-        playerController.Move(wantedDirectionQuaternion * moveVector);
+
+        GetComponent<Rigidbody>().AddForce((wantedDirectionQuaternion * moveVector));
     }
 
     void DashCoolDown()
@@ -90,14 +91,36 @@ public class PlayerMovement : MonoBehaviour
     {
         dashing = false;
     }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    
+    private void OnTriggerEnter(Collider other)
     {
-        if (dashing && (hit.collider.tag == "Player"))
-        {
-            otherPlayer.playerPushedMovement = -transform.forward;
+        Debug.Log(tag + " boom " + other.tag);
 
-            dashing = false;
+        switch (other.tag)
+        {
+            case "Player":
+                if (dashing)
+                {
+                    GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+
+                    otherPlayer.playerPushedMovement = transform.forward * playerDashSpeed;
+
+                    dashing = false;
+                }
+                break;
+            case "Walkable":
+                gameManager.SteppedOnWalkableTile(other, this);
+                break;
+            case "NotWalkable":
+                gameManager.SteppedOnNonWalkableTile(other, this);
+                break;
+            default:
+                break;
         }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }
