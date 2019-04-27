@@ -9,9 +9,9 @@ public class SceneSetup : MonoBehaviour
     public GameObject playerTwo;
     // Start is called before the first frame update
     
-    void Start()
+    void Awake()
     {
-        //GameManager.Instance.RegisterPlayer(playerOne, playerTwo);
+        GameManager.Instance.RegisterPlayer(playerOne, playerTwo);
 
         playerOne.GetComponent<PlayerMovement>().Respawn();
         playerTwo.GetComponent<PlayerMovement>().Respawn();

@@ -13,12 +13,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: /Users/jeppe/Unity Stuff/ngj2019/FMOD_Banks/Desktop/Master.strings.bank
-  lastModified: 636919085180000000
+  lastModified: 636919880480000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 722
+    Value: 822
   Exists: 1
+--- !u!114 &-448617982625838598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  guid: b3f92346e8f1a4449d6f7b1b0130b221
+  Banks:
+  - {fileID: 3809304122706077570}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2961818557777705566}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 115862
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,13 +60,31 @@ MonoBehaviour:
   - {fileID: 3809304122706077570}
   EditorEvents:
   - {fileID: 7236732578266668386}
+  - {fileID: -448617982625838598}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3809304122706077570}
   StringsBanks:
   - {fileID: -3453148255616285948}
-  stringsBankWriteTime: 636919085180000000
+  stringsBankWriteTime: 636919880480000000
   cacheVersion: 3
+--- !u!114 &2961818557777705566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: MusicStates
+  Min: 0
+  Max: 6
+  Default: 0
+  Exists: 0
 --- !u!114 &3809304122706077570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,11 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: /Users/jeppe/Unity Stuff/ngj2019/FMOD_Banks/Desktop/Master.bank
-  lastModified: 636919085180000000
+  lastModified: 636919880480000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 2656
+    Value: 6097280
   Exists: 1
 --- !u!114 &7236732578266668386
 MonoBehaviour:

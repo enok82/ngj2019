@@ -6,6 +6,10 @@ TagManager:
   tags:
   - NotWalkable
   - Walkable
+  - walkable
+  - notWalkable
+  - finishTile
+  - testTag
   layers:
   - Default
   - TransparentFX
