@@ -37,14 +37,20 @@ public class LevelScript : MonoBehaviour
 			{
 				if (tileColors [x + y * levelWidth] == walkableColor) 
 				{	
-					Instantiate (walkableTile, new Vector3 (x, y), Quaternion.identity);	
+					GameObject clone = Instantiate (walkableTile, new Vector3 (x, 0, y), Quaternion.identity);
+                    clone.tag = "walkable";
+                    clone.name = "Walkable Tile" + x + y;
+
 				}
 
 				if (tileColors [x + y * levelWidth] == notWalkableColor) 
-				{	
-					Instantiate (notWalkableTile, new Vector3 (x, y), Quaternion.identity);
-				}			
+				{
+                    GameObject clone = Instantiate(notWalkableTile, new Vector3 (x, 0, y), Quaternion.identity);
+                    clone.tag = "notWalkable";
+                    clone.name = "Not Walkable Tile" + x + y;
+                }			
 			}
 		}
 	}
+    
 }
