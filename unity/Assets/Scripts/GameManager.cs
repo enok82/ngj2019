@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public int playerTwoDeath; 
    
     public event Action gameOverEvent;
+
+    private GameObject levelScript;
     
     public enum GameState
     {
@@ -47,6 +49,8 @@ public class GameManager : MonoBehaviour
 
         currentGamestate = GameState.MAINMENU;
 
+       levelScript = FindObjectOfType<LevelScript>();
+
     }
 
     private void Update()
@@ -61,6 +65,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         currentGamestate = GameState.PLAYING;
+        
+        LightUpTile();
 
         
     }
@@ -98,7 +104,14 @@ public class GameManager : MonoBehaviour
     {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
+        
 
+    }
+
+
+    public void RegisterTiles(GameObject _tiles)
+    {
+        this.levelScript = _tiles;
     }
 
 
@@ -108,6 +121,28 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadSceneAsync("Main Menu");
 
     }
+
+
+    public void LightUpTile()
+    {
+        foreach (var tile in levelScript.walkableTiles)       
+        {                                                     
+                                                      
+            Renderer renderer = GetComponent<Renderer>();     
+                                                      
+            renderer.material.EnableKeyword("_EMISSION");     
+                                                      
+        }                                                     
+        
+    }
+
+
+   
+   
+   
+   
+   
+   
 
 
 
