@@ -19,7 +19,6 @@ public class LevelScript : MonoBehaviour
 
     private Animator anim;
 
-
 	void Start ()
 	{
 		levelWidth = levelTexture.width;
@@ -35,23 +34,25 @@ public class LevelScript : MonoBehaviour
 		tileColors = new Color[levelWidth * levelHeight];
 		tileColors = levelTexture.GetPixels ();
 
-		for (int y = 0; y < levelHeight; y++) 
+		for (int z = 0; z < levelHeight; z++) 
 		{
 			for (int x = 0; x < levelWidth; x++) 
 			{
-				if (tileColors [x + y * levelWidth] == walkableColor) 
+				if (tileColors [x + z * levelWidth] == walkableColor) 
 				{	
-					GameObject clone = Instantiate (walkableTile, new Vector3 (x, 0, y), Quaternion.identity);
+					GameObject clone = Instantiate (walkableTile, new Vector3 (transform.position.x + x, 0, transform.position.z + z), Quaternion.identity);
                     clone.tag = "walkable";
-                    clone.name = "Walkable Tile" + x + y;
+                    clone.name = "Walkable Tile" + x + z;
+                    clone.transform.parent = this.transform;
 
 				}
 
-				if (tileColors [x + y * levelWidth] == notWalkableColor) 
+				if (tileColors [x + z * levelWidth] == notWalkableColor) 
 				{
-                    GameObject clone = Instantiate(notWalkableTile, new Vector3 (x, 0, y), Quaternion.identity);
+                    GameObject clone = Instantiate(notWalkableTile, new Vector3 (transform.position.x + x, 0, transform.position.z + z), Quaternion.identity);
                     clone.tag = "notWalkable";
-                    clone.name = "Not Walkable Tile" + x + y;
+                    clone.name = "Not Walkable Tile" + x + z;
+                    clone.transform.parent = this.transform;
                 }			
 			}
 		}

@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float startDirectionAngle;
 
+    public int deathCount;
+
     public GameObject deathSpray;
 
     public GameObject endGameConfetti;
@@ -115,12 +117,15 @@ public class PlayerMovement : MonoBehaviour
 
                     dashing = false;
                 }
+
                 break;
             case "Walkable":
                 gameManager.SteppedOnWalkableTile(other, this);
+
                 break;
             case "NotWalkable":
                 gameManager.SteppedOnNonWalkableTile(other, this);
+
                 break;
             default:
                 break;
