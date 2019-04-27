@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 960500525}
   - component: {fileID: 960500524}
   - component: {fileID: 960500523}
+  - component: {fileID: 960500526}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -145,7 +146,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960500522}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &960500524
 Camera:
   m_ObjectHideFlags: 0
@@ -203,6 +204,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &960500526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960500522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &1024338829
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +250,9 @@ MonoBehaviour:
   playerTwo: {fileID: 0}
   playerOneDeaths: 0
   playerTwoDeath: 0
+  waitTime: 10
+  countDownTime: 0
+  walkableTilesCount: 0
   currentGamestate: 0
   gameIsStarted: 0
 --- !u!4 &1024338831
@@ -375,7 +392,7 @@ MonoBehaviour:
   previewOnGUI: 1
   enableGUILayout: 1
   drawStateLabels: 1
-  enableStateLabelsInBuilds: 1
+  enableStateLabelsInBuilds: 0
   GUITextureStateLabels: 0
   GUITextStateLabels: 0
   filterLabelsWithDistance: 0
@@ -395,6 +412,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1448888262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1448888264}
+  - component: {fileID: 1448888263}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1448888263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448888262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ae9a1da93e8452d83f1faf3c6fa5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonHover: 
+  buttonClick: 
+  musicEvent: event:/Music
+--- !u!4 &1448888264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448888262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 972, y: 497, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2103968264
 GameObject:

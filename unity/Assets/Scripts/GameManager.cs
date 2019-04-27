@@ -19,8 +19,17 @@ public class GameManager : MonoBehaviour
     public int playerTwoDeath; 
    
     public event Action gameOverEvent;
+    public event Action startGameEvent;
 
-    private GameObject levelScript;
+    public float waitTime;
+    public float countDownTime;
+
+
+    private LevelScript m_levelScript;
+    private PlayerMovement playerOneControls;
+    private PlayerMovement playerTwoControls;
+
+    public int walkableTilesCount;
     
     public enum GameState
     {
@@ -49,7 +58,18 @@ public class GameManager : MonoBehaviour
 
         currentGamestate = GameState.MAINMENU;
 
-       levelScript = FindObjectOfType<LevelScript>();
+        countDownTime = waitTime;
+
+        //m_levelScript = FindObjectOfType<LevelScript>();
+
+    }
+
+
+    private void Start()
+    {
+
+        
+        
 
     }
 
@@ -60,15 +80,25 @@ public class GameManager : MonoBehaviour
             GameOver();
             
         }
+        
+        
+        //Debug.Log(currentGamestate);
     }
 
     public void StartGame()
     {
         currentGamestate = GameState.PLAYING;
-        
-        LightUpTile();
 
+
+        if (startGameEvent != null)
+        {
+            startGameEvent();
+        }
         
+        LightUpTiles();
+        walkableTilesCount = m_levelScript.walkableTiles.Count;
+
+
     }
 
 
@@ -105,13 +135,16 @@ public class GameManager : MonoBehaviour
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
         
+        playerOneControls = playerOne.GetComponent<PlayerMovement>();                               
+        playerTwoControls = playerTwo.GetComponent<PlayerMovement>();                               
+        
 
     }
 
 
-    public void RegisterTiles(GameObject _tiles)
+    public void RegisterLevelScript(LevelScript _levelScript)
     {
-        this.levelScript = _tiles;
+        this.m_levelScript = _levelScript;
     }
 
 
@@ -119,22 +152,51 @@ public class GameManager : MonoBehaviour
     {
 
         SceneManager.LoadSceneAsync("Main Menu");
+        currentGamestate = GameState.MAINMENU;
 
     }
-
-
-    public void LightUpTile()
+    
+    
+    public void LightUpTiles()                            
+    {                                                     
+                                                  
+        StartCoroutine(LightUpSequence(waitTime));        
+                                                          
+    }                                                     
+                                                          
+                                                          
+    public IEnumerator LightUpSequence(float waitTime)
     {
-        foreach (var tile in levelScript.walkableTiles)       
-        {                                                     
-                                                      
-            Renderer renderer = GetComponent<Renderer>();     
-                                                      
-            renderer.material.EnableKeyword("_EMISSION");     
-                                                      
-        }                                                     
+        if (playerOneControls != null && playerTwoControls != null)
+        {
+            playerOneControls.enabled = false;
+            playerTwoControls.enabled = false;  
+        }
+    
         
-    }
+        foreach (var tiles in m_levelScript.walkableTiles)              
+        {                                                 
+            Debug.Log("Lighted Up");	                      
+        }                                                 
+                                                          
+        yield return new WaitForSeconds(waitTime);        
+		                                                  
+        foreach (var tiles in m_levelScript.walkableTiles)              
+        {                                                 
+            Debug.Log("Lighted Down");	                  
+        } 
+        
+     
+       
+       if (playerOneControls != null && playerTwoControls != null)
+       {
+           playerOneControls.enabled = true; 
+           playerTwoControls.enabled = true; 
+       }
+        
+       
+    }                                                     
+ }
 
 
    
@@ -149,6 +211,6 @@ public class GameManager : MonoBehaviour
 
 
 
-}
+
 
     

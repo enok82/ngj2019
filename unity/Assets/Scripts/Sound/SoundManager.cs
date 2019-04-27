@@ -5,6 +5,8 @@ using FMOD;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
+using Debug = UnityEngine.Debug;
+
 
 public class SoundManager : MonoBehaviour
 {
@@ -34,16 +36,28 @@ public class SoundManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        
-        m_musicInstance = FmodEvent.Play(musicEvent, transform, null);
+
+        m_musicInstance = RuntimeManager.CreateInstance(musicEvent);
+       
         m_gameStateParameter = FmodEvent.GetParameterId(musicEvent, "GameState");
     }
 
+    private void Start()
+    {
+        RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 0);
+        m_musicInstance.start();
+    }
 
     private void Update()
     {
 
-        switch (GameManager.Instance.currentGamestate)
+        if (GameManager.Instance.currentGamestate == GameManager.GameState.PLAYING)
+        {
+            RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 1);
+        }
+
+        Debug.Log(GameManager.Instance.currentGamestate);
+        /*switch (GameManager.Instance.currentGamestate)
         {
             case GameManager.GameState.MAINMENU:
                 m_musicInstance.setParameterByID(m_gameStateParameter,0);
@@ -57,6 +71,6 @@ public class SoundManager : MonoBehaviour
             default:
                 m_musicInstance.setParameterByID(m_gameStateParameter,0);
                 break; 
-        }
+        }*/
     }
 }

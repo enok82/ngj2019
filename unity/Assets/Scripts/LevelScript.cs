@@ -20,11 +20,25 @@ public class LevelScript : MonoBehaviour
 
 	public Texture2D levelTexture;
 
+	public float waitTime;
+
     public List<GameObject> walkableTiles;
 
     private Animator anim;
+						  
 
-	void Start ()
+    private void OnEnable()
+    {
+	    //GameManager.Instance.startGameEvent += LightUpTiles;
+    }
+
+    private void OnDisable()
+    {
+	   // GameManager.Instance.startGameEvent -= LightUpTiles;
+
+    }
+
+    void Awake ()
 	{
 		levelWidth = levelTexture.width;
 		levelHeight = levelTexture.height;
@@ -72,6 +86,39 @@ public class LevelScript : MonoBehaviour
             }
 		}
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
 
 }

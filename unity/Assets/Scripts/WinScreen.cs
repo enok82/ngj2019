@@ -51,11 +51,11 @@ public class WinScreen : MonoBehaviour
 
         if (playerOne.hasWon == true)
         {
-            whoWon.text = playerOne.name + "Has Won!";
+            whoWon.text = playerOne.name + " " + "Has Won!";
         }
         else
         {
-            whoWon.text = playerTwo.name + "Has Won!";
+            whoWon.text = playerTwo.name + " " + "Has Won!";
 
         }
         
