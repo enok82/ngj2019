@@ -1,6 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
+using System.Collections;
+using System;
+using HutongGames.PlayMaker.Actions;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public int playerOneDeaths;
     public int playerTwoDeath; 
+   
+    public event Action gameOverEvent;
     
     public enum GameState
     {
@@ -42,9 +49,19 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKey("space"))
+        {
+            GameOver();
+        }
+    }
+
     public void StartGame()
     {
-        currentGamestate = GameState.PLAYING; 
+        currentGamestate = GameState.PLAYING;
+
+        
     }
 
 
@@ -52,6 +69,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         currentGamestate = GameState.WINSCREEN; 
+        if (gameOverEvent != null)
+        {
+            gameOverEvent();
+        }
+        
     }
 
     public void SteppedOnWalkableTile(Collider tile, PlayerMovement actor)
@@ -77,11 +99,20 @@ public class GameManager : MonoBehaviour
         playerTwo = this.playerTwo; 
 
     }
-    
-    
+
+
+    public void MainMenu()
+    {
+
+        SceneManager.LoadSceneAsync("Main Menu");
+
+    }
+
+
+
+
+
+
+}
 
     
-    
-    
-    
-}
