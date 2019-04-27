@@ -2494,7 +2494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960500522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.7, y: 19.7, z: -50.3}
+  m_LocalPosition: {x: 6, y: 19.7, z: -50.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3411,11 +3411,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 6150597758737387634, guid: fcad1443b1cc6c049884a6560f11c129,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2993500089343979095, guid: fcad1443b1cc6c049884a6560f11c129,
         type: 3}
       propertyPath: m_Controller
@@ -3430,6 +3425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150597758737387634, guid: fcad1443b1cc6c049884a6560f11c129,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcad1443b1cc6c049884a6560f11c129, type: 3}
@@ -4580,11 +4580,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5794917859209338937, guid: 1dfa24fe1ed4a54428c9b41b335425ef,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 917980999088922131, guid: 1dfa24fe1ed4a54428c9b41b335425ef,
         type: 3}
       propertyPath: m_Controller
@@ -4599,6 +4594,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794917859209338937, guid: 1dfa24fe1ed4a54428c9b41b335425ef,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dfa24fe1ed4a54428c9b41b335425ef, type: 3}
@@ -5777,14 +5777,14 @@ RectTransform:
   m_GameObject: {fileID: 1380932886155889753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7863, y: 1.7863, z: 1.7863}
   m_Children: []
   m_Father: {fileID: 1380932887217085864}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -57}
+  m_AnchoredPosition: {x: 0, y: -105.34}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1380932886155889755
@@ -5813,8 +5813,8 @@ MonoBehaviour:
 
     CRITTERS'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bf2076bf85d0a5248b39fa290b61ffb9, type: 2}
-  m_sharedMaterial: {fileID: -6495564715529525560, guid: bf2076bf85d0a5248b39fa290b61ffb9,
+  m_fontAsset: {fileID: 11400000, guid: 310967c0818aae74ebbedff4f4bf4c78, type: 2}
+  m_sharedMaterial: {fileID: -2289834843021171139, guid: 310967c0818aae74ebbedff4f4bf4c78,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5849,16 +5849,16 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_textAlignment: 514
-  m_characterSpacing: 0
+  m_characterSpacing: -14.78
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -18.12
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 6
+  m_firstOverflowCharacterIndex: 11
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
