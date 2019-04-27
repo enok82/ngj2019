@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LevelScript : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class LevelScript : MonoBehaviour
     public Color finishColor;
 
 	public Texture2D levelTexture;
+
+    public List<GameObject> walkableTiles;
 
     private Animator anim;
 
@@ -46,6 +49,7 @@ public class LevelScript : MonoBehaviour
                     clone.tag = "walkable";
                     clone.name = "Walkable Tile" + x + z;
                     clone.transform.parent = this.transform;
+                    walkableTiles.Add(clone);
 
 				}
 
@@ -63,6 +67,7 @@ public class LevelScript : MonoBehaviour
                     clone.tag = "finishTile";
                     clone.name = "Finish Tile" + x + z;
                     clone.transform.parent = this.transform;
+                    walkableTiles.Add(clone);
                 }
             }
 		}
