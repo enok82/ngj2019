@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey("space"))
         {
             GameOver();
+            
         }
     }
 
@@ -95,8 +96,8 @@ public class GameManager : MonoBehaviour
 
     public void RegisterPlayer(GameObject playerOne, GameObject playerTwo)
     {
-        playerOne = this.playerOne;
-        playerTwo = this.playerTwo; 
+        this.playerOne = playerOne;
+        this.playerTwo = playerTwo;
 
     }
 

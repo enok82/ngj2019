@@ -30,8 +30,8 @@ public class WinScreen : MonoBehaviour
 
     void Start()
     {
-       // playerOne = GameManager.Instance.playerOne.GetComponent<PlayerMovement>();
-       // playerTwo = GameManager.Instance.playerTwo.GetComponent<PlayerMovement>();
+        playerOne = GameManager.Instance.playerOne.GetComponent<PlayerMovement>();
+        playerTwo = GameManager.Instance.playerTwo.GetComponent<PlayerMovement>();
     }
 
     
@@ -46,13 +46,18 @@ public class WinScreen : MonoBehaviour
     private void ShowDeathScore()
     {
 
-       // playerOneScore.text = playerOne.deathCount.ToString();
-       // playerTwoScore.text = playerOne.deathCount.ToString();
+       playerOneScore.text = playerOne.deathCount.ToString();
+       playerTwoScore.text = playerOne.deathCount.ToString();
 
-        /*if (playerOne.wonGame == true)
+        if (playerOne.hasWon == true)
         {
             whoWon.text = playerOne.name + "Has Won!";
-        }*/
+        }
+        else
+        {
+            whoWon.text = playerTwo.name + "Has Won!";
+
+        }
         
         
         winScreen.SetActive(true);
