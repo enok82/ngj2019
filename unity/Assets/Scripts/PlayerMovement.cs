@@ -12,16 +12,26 @@ public class PlayerMovement : MonoBehaviour
     public int playerWalkSpeed;
     public int playerDashSpeed;
     public float playerDashTime;
+    public float playerDashCoolDownTime;
     public int playerTurnSpeed;
 
+    public bool dashing;
+    public bool dashOnCoolDown;
+    public Vector3 playerPushedMovement;
+
+    public float startDirectionAngle;
+
     private float wantedDirectionAngle;
-    private bool dashing;
     private CharacterController playerController;
 
+    public PlayerMovement otherPlayer;
+    
     void Awake()
     {
-        wantedDirectionAngle = 0f;
+        playerPushedMovement = new Vector3(0, 0, 0);
+        wantedDirectionAngle = startDirectionAngle;
         dashing = false;
+        dashOnCoolDown = false;
         playerController = GetComponent<CharacterController>();
     }
 
@@ -31,28 +41,37 @@ public class PlayerMovement : MonoBehaviour
         float turn = Input.GetAxis(playerRightAxis) - Input.GetAxis(playerLeftAxis);
         float walk = Input.GetAxis(playerLeftAxis) + Input.GetAxis(playerRightAxis);
         float dash = Mathf.Max(Input.GetAxis(playerLeftDashAxis), Input.GetAxis(playerRightDashAxis));
-
-        Debug.Log(dash);
-
+        
         Vector3 moveVector;
 
         Quaternion wantedDirectionQuaternion = Quaternion.Euler(0, wantedDirectionAngle, 0);
 
         if (!dashing)
         {
-            if (dash > 0)
+            if (dash > 0 && !dashOnCoolDown)
             {
                 dashing = true;
+                dashOnCoolDown = true;
 
-                Invoke("DashCoolDown", playerDashTime);
+                Invoke("DashTime", playerDashTime);
+                Invoke("DashCoolDown", playerDashCoolDownTime);
             }
 
             wantedDirectionAngle += turn * playerTurnSpeed;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, wantedDirectionQuaternion, 1);
 
-            moveVector = new Vector3(0, 0, walk) * playerWalkSpeed / 10;
+            moveVector = (new Vector3(0, 0, walk) * playerWalkSpeed / 10) + playerPushedMovement;
 
+            if(playerPushedMovement.magnitude > 0)
+            {
+                playerPushedMovement -= playerPushedMovement.normalized / 10;
+
+                if(playerPushedMovement.magnitude < 0.1)
+                {
+                    playerPushedMovement = new Vector3(0, 0, 0);
+                }
+            }
         }
         else
         {
@@ -64,6 +83,21 @@ public class PlayerMovement : MonoBehaviour
 
     void DashCoolDown()
     {
+        dashOnCoolDown = false;
+    }
+
+    void DashTime()
+    {
         dashing = false;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (dashing && (hit.collider.tag == "Player"))
+        {
+            otherPlayer.playerPushedMovement = -transform.forward;
+
+            dashing = false;
+        }
     }
 }
