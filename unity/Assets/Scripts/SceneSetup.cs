@@ -16,4 +16,9 @@ public class SceneSetup : MonoBehaviour
         playerOne.GetComponent<PlayerMovement>().Respawn();
         playerTwo.GetComponent<PlayerMovement>().Respawn();
     }
+
+    private void Start()
+    {
+        GameManager.Instance.StartGame();
+    }
 }
