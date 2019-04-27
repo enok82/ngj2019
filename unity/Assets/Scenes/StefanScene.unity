@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 175956549}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Walkable
+  m_TagString: walkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 1461104340}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: NotWalkable
+  m_TagString: notWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -764,6 +764,12 @@ PrefabInstance:
       propertyPath: spawnHelper
       value: 
       objectReference: {fileID: 583927959}
+    - target: {fileID: 871971458875391853, guid: abe2358043eef904b8a374419db2ac0a,
+        type: 3}
+      propertyPath: deathSpray
+      value: 
+      objectReference: {fileID: 6667062207828442759, guid: c3626e5c7366c2645af2cbf557d09109,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe2358043eef904b8a374419db2ac0a, type: 3}
 --- !u!1001 &3722160222630281020
@@ -848,5 +854,11 @@ PrefabInstance:
       propertyPath: spawnHelper
       value: 
       objectReference: {fileID: 1591286672}
+    - target: {fileID: 3722160222082734189, guid: d6e3308feae19cd40b791d360a3f8746,
+        type: 3}
+      propertyPath: deathSpray
+      value: 
+      objectReference: {fileID: 6667062207828442759, guid: c3626e5c7366c2645af2cbf557d09109,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e3308feae19cd40b791d360a3f8746, type: 3}
