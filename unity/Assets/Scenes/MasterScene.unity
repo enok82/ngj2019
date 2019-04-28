@@ -1247,6 +1247,11 @@ PrefabInstance:
       propertyPath: playerTurnSpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 871971458875391853, guid: abe2358043eef904b8a374419db2ac0a,
+        type: 3}
+      propertyPath: startDirectionAngle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 871971458875391851, guid: abe2358043eef904b8a374419db2ac0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1783,7 +1788,7 @@ PrefabInstance:
     - target: {fileID: 3722160222082734189, guid: d6e3308feae19cd40b791d360a3f8746,
         type: 3}
       propertyPath: startDirectionAngle
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3722160222082734189, guid: d6e3308feae19cd40b791d360a3f8746,
         type: 3}
