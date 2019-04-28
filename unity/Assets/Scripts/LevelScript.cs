@@ -52,9 +52,9 @@ public class LevelScript : MonoBehaviour
 
 	void LoadLevel ()
 	{
-        levelTexture = levelTextures[Random.Range(0,levelTextures.Length)];
+        /*levelTexture = levelTextures[Random.Range(0,levelTextures.Length)];
         levelWidth = levelTexture.width;
-        levelHeight = levelTexture.height;
+        levelHeight = levelTexture.height;*/
 
         tileColors = new Color[levelWidth * levelHeight];
 		tileColors = levelTexture.GetPixels ();
@@ -91,6 +91,11 @@ public class LevelScript : MonoBehaviour
                 }
             }
 		}
+        /*foreach (GameObject tile in walkableTiles)
+        {
+            Renderer renderer = tile.GetComponent<Renderer>();
+            renderer.material.EnableKeyword("_EmissionMap");
+        }*/
 	}
 
 
