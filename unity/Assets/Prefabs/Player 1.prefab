@@ -62,6 +62,7 @@ MonoBehaviour:
   playerPushedDragCoefficient: 0.1
   startDirectionAngle: 180
   deathCount: 0
+  hasWon: 0
   deathSpray: {fileID: 0}
   endGameConfetti: {fileID: 0}
   otherPlayer: {fileID: 0}
@@ -96,6 +97,18 @@ CapsuleCollider:
   m_Height: 0.51
   m_Direction: 1
   m_Center: {x: 0, y: 0.24, z: 0}
+--- !u!114 &5139595640859777761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374235797742922368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d3af22e786941e98c0132fcd5057e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &871971460092049505
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +350,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5794917859209338937, guid: 1dfa24fe1ed4a54428c9b41b335425ef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1dfa24fe1ed4a54428c9b41b335425ef, type: 3}
+--- !u!1 &6374235797742922368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6083246832979444090, guid: 1dfa24fe1ed4a54428c9b41b335425ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 871971459735038970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7939437637853337747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7077214517172925289, guid: 1dfa24fe1ed4a54428c9b41b335425ef,

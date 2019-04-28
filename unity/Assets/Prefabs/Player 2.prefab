@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &4104682553373135897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827176422963468224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d3af22e786941e98c0132fcd5057e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3722160222082734188
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,6 +74,7 @@ MonoBehaviour:
   playerPushedDragCoefficient: 0.1
   startDirectionAngle: 0
   deathCount: 0
+  hasWon: 0
   deathSpray: {fileID: 0}
   endGameConfetti: {fileID: 0}
   otherPlayer: {fileID: 0}
@@ -337,6 +350,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6150597758737387634, guid: fcad1443b1cc6c049884a6560f11c129, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fcad1443b1cc6c049884a6560f11c129, type: 3}
+--- !u!1 &4827176422963468224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8167935852390969662, guid: fcad1443b1cc6c049884a6560f11c129,
+    type: 3}
+  m_PrefabInstance: {fileID: 3722160221960808190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8405628652489156051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5116387939892724525, guid: fcad1443b1cc6c049884a6560f11c129,

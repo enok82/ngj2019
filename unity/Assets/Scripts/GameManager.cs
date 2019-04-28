@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     private PlayerMovement playerTwoControls;
 
     public int walkableTilesCount;
+    public int tilesActivated;
     
     public enum GameState
     {
@@ -99,6 +100,7 @@ public class GameManager : MonoBehaviour
         
         LightUpTiles();
         walkableTilesCount = m_levelScript.walkableTiles.Count;
+        tilesActivated = 0; 
 
 
     }

@@ -23,6 +23,8 @@ public class SoundManager : MonoBehaviour
 
     private PARAMETER_ID m_gameStateParameter;
     private EventInstance m_musicInstance; 
+    
+    
 
 
     private void Awake()
@@ -37,13 +39,16 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
 
-        m_musicInstance = RuntimeManager.CreateInstance(musicEvent);
        
-        m_gameStateParameter = FmodEvent.GetParameterId(musicEvent, "GameState");
     }
 
     private void Start()
     {
+        
+        m_musicInstance = RuntimeManager.CreateInstance(musicEvent);
+       
+        m_gameStateParameter = FmodEvent.GetParameterId(musicEvent, "MusicStates");
+        
         RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 0);
         m_musicInstance.start();
     }
