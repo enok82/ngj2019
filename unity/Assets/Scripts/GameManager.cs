@@ -117,7 +117,8 @@ public class GameManager : MonoBehaviour
 
     public void SteppedOnWalkableTile(Collider tile, PlayerMovement actor)
     {
-        ;
+        Renderer renderer = tile.GetComponent<Renderer>();
+        renderer.material.EnableKeyword("_EMISSION");
     }
 
     public void SteppedOnNonWalkableTile(Collider tile, PlayerMovement actor)
