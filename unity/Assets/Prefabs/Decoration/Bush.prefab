@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 6045668102057198611}
   - component: {fileID: 3367990640197025317}
   - component: {fileID: 9043519215629451996}
-  - component: {fileID: 111530283570921036}
+  - component: {fileID: 1281756913479776795}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -156,7 +156,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &111530283570921036
+--- !u!65 &1281756913479776795
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,5 +167,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.011894746, y: 0.013073261, z: 0.0128570795}
-  m_Center: {x: -0.0007455216, y: 0.0064905626, z: -0.0013894436}
+  m_Size: {x: 0.59473735, y: 0.65366304, z: 0.64285403}
+  m_Center: {x: -0.037276078, y: 0.32452816, z: -0.069472186}
