@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public string playerLeftDashAxis;
     public string playerRightDashAxis;
 
+    public string playerHorizontalAxis;
+    public string playerVerticalAxis;
+
     public int playerWalkSpeed;
     public int playerDashSpeed;
     public float playerDashTime;
@@ -54,9 +57,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float turn = (Input.GetAxis(playerRightAxis) - Input.GetAxis(playerLeftAxis));
-        float walk = -(Input.GetAxis(playerLeftAxis) + Input.GetAxis(playerRightAxis));
+        float turn = 0;
+        float walk = 0;
+
         float dash = Mathf.Max(Input.GetAxis(playerLeftDashAxis), Input.GetAxis(playerRightDashAxis));
+
+        switch (GameManager.Instance.playerControllerScheme)
+        {
+            case "A":
+                turn = Input.GetAxis(playerRightAxis) - Input.GetAxis(playerLeftAxis);
+                walk = -(Input.GetAxis(playerLeftAxis) + Input.GetAxis(playerRightAxis));
+
+                break;
+            case "B":
+                turn = Input.GetAxis(playerHorizontalAxis);
+                walk = 2 * Input.GetAxis(playerVerticalAxis);
+
+                break;
+            default:
+                break;
+        }
         
         anim.SetFloat("Speed", Mathf.Abs(walk));
 
