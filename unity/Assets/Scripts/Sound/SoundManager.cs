@@ -39,7 +39,7 @@ public class SoundManager : MonoBehaviour
 
         m_musicInstance = RuntimeManager.CreateInstance(musicEvent);
        
-        m_gameStateParameter = FmodEvent.GetParameterId(musicEvent, "GameState");
+        m_gameStateParameter = FmodEvent.GetParameterId(musicEvent, "MusicStates");
     }
 
     private void Start()
