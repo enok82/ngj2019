@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public event Action startGameEvent;
 
     public float waitTime;
+    
+    [HideInInspector]
     public float countDownTime;
 
 
@@ -159,7 +161,9 @@ public class GameManager : MonoBehaviour
     
     public void LightUpTiles()                            
     {                                                     
-                                                  
+        
+          
+        
         StartCoroutine(LightUpSequence(waitTime));        
                                                           
     }                                                     
@@ -174,17 +178,11 @@ public class GameManager : MonoBehaviour
         }
     
         
-        foreach (var tiles in m_levelScript.walkableTiles)              
-        {                                                 
-            Debug.Log("Lighted Up");	                      
-        }                                                 
+        EnableEmission();                                             
                                                           
         yield return new WaitForSeconds(waitTime);        
 		                                                  
-        foreach (var tiles in m_levelScript.walkableTiles)              
-        {                                                 
-            Debug.Log("Lighted Down");	                  
-        } 
+        DisableEmission();
         
      
        
@@ -195,7 +193,38 @@ public class GameManager : MonoBehaviour
        }
         
        
-    }                                                     
+    }
+
+
+    public void EnableEmission()
+    {
+        
+        foreach (var tile in m_levelScript.walkableTiles)              
+        {                                                 
+            Renderer renderer = tile.GetComponent<Renderer>();
+            
+            renderer.material.EnableKeyword("_EMISSION");
+            
+            
+            Debug.Log("Lighted Up");	                      
+        } 
+        
+    }
+    
+    public void DisableEmission()
+    {
+        
+        foreach (var tile in m_levelScript.walkableTiles)              
+        {                                                 
+            Renderer renderer = tile.GetComponent<Renderer>();
+            
+            renderer.material.DisableKeyword("_EMISSION");
+            
+            
+            Debug.Log("Lighted Down");	                      
+        } 
+        
+    }
  }
 
 
