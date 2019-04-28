@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using System.Collections;
 using System;
+using FMODUnity;
 using HutongGames.PlayMaker.Actions;
 using UnityEngine.SceneManagement;
 
@@ -32,6 +33,23 @@ public class GameManager : MonoBehaviour
     private LevelScript m_levelScript;
     private PlayerMovement playerOneControls;
     private PlayerMovement playerTwoControls;
+
+    
+    [EventRef]
+    public string showtiles;
+    
+    [EventRef]
+    public string hidetiles;
+    
+    [EventRef]
+    public string wonGame;
+    
+    [EventRef]
+    public string unlockTiles;
+    
+    [EventRef]
+    public string playerDeath;
+    
 
     public int walkableTilesCount;
 
@@ -99,23 +117,33 @@ public class GameManager : MonoBehaviour
         {
             gameOverEvent();
         }
+
+        FmodEvent.PlayOneShot(wonGame, transform, null);
+
     }
 
     public void SteppedOnWalkableTile(Collider tile, PlayerMovement actor)
     {
         Renderer renderer = tile.GetComponent<Renderer>();
         renderer.material.EnableKeyword("_EMISSION");
+
+        FmodEvent.PlayOneShot(unlockTiles, transform, null);
     }
 
     public void SteppedOnNonWalkableTile(Collider tile, PlayerMovement actor)
     {
         actor.Die();
+        FmodEvent.PlayOneShot(playerDeath, transform, null);
+
+
     }
 
     public void SteppedOnFinishTile(Collider tile, PlayerMovement actor)
     {
         actor.Win();
         GameOver();
+        
+        
     }
 
     public void RegisterPlayer(GameObject playerOne, GameObject playerTwo)
@@ -178,8 +206,13 @@ public class GameManager : MonoBehaviour
 
             renderer.material.EnableKeyword("_EMISSION");
             
+            
+            
             Debug.Log("Lighted Up");
         }
+
+        FmodEvent.PlayOneShot(showtiles, transform, null);
+
     }
 
     public void DisableEmission()
@@ -192,6 +225,9 @@ public class GameManager : MonoBehaviour
             
             Debug.Log("Lighted Down");
         }
+        
+        FmodEvent.PlayOneShot(hidetiles, transform, null);
+
     }
 
     public void SetPlayerControllerScheme()
