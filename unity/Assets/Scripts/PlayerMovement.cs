@@ -115,9 +115,9 @@ public class PlayerMovement : MonoBehaviour
                 {
                     playerRigidbody.velocity = new Vector3(0, 0, 0);
 
-                    otherPlayer.playerPushedMovement = -transform.forward * playerDashSpeed;
+                    otherPlayer.playerPushedMovement = transform.forward * playerDashSpeed;
 
-                    dashing = false;
+                    StopDashing();
                 }
 
                 break;
@@ -177,6 +177,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 Debug.Log("Issues with RigidBody");
             }
+            wantedDirectionAngle = 0;
+
             playerRigidbody.position = spawnHelper.position;
             playerRigidbody.velocity = new Vector3(0, 0, 0);
             StopDashing();
