@@ -22,6 +22,22 @@ InputManager:
     axis: 1
     joyNum: 1
   - serializedVersion: 3
+    m_Name: P1 Horizontal
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: s
+    positiveButton: w
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1
+    dead: 0.5
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
     m_Name: P1 Right
     descriptiveName: 
     descriptiveNegativeName: 
@@ -84,6 +100,22 @@ InputManager:
     invert: 0
     type: 2
     axis: 1
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: P2 Horizontal
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 5
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1
+    dead: 0.5
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: P2 Right
