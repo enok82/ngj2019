@@ -51,38 +51,26 @@ public class SoundManager : MonoBehaviour
     private void Update()
     {
 
-     
-        switch (GameManager.Instance.currentGamestate)
+        if (GameManager.Instance.currentGamestate == GameManager.GameState.PLAYING)
         {
-            case GameManager.GameState.MAINMENU:
-                RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 0);
-                break;
-            case GameManager.GameState.PLAYING:
-                RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 1);
-                break;
-            case GameManager.GameState.WINSCREEN:
-                RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 5);
-                break;
-            case GameManager.GameState.PLAYING2:
-                RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 2);
-                break;
-            
-            case GameManager.GameState.PLAYING3:
-                RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 3);
-                break;
-           
-            case GameManager.GameState.PLAYING4:
-                RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 3);
-                break;
-
-            default:
-                RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 0);
-                break; 
+            RuntimeManager.StudioSystem.setParameterByID(m_gameStateParameter, 1);
         }
 
-        
-        
-        
-        
+        Debug.Log(GameManager.Instance.currentGamestate);
+        /*switch (GameManager.Instance.currentGamestate)
+        {
+            case GameManager.GameState.MAINMENU:
+                m_musicInstance.setParameterByID(m_gameStateParameter,0);
+                break;
+            case GameManager.GameState.PLAYING:
+                m_musicInstance.setParameterByID(m_gameStateParameter, 1);
+                break;
+            case GameManager.GameState.WINSCREEN:
+                m_musicInstance.setParameterByID(m_gameStateParameter, 5);
+                break;
+            default:
+                m_musicInstance.setParameterByID(m_gameStateParameter,0);
+                break; 
+        }*/
     }
 }
