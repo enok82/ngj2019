@@ -3697,11 +3697,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 6150597758737387634, guid: fcad1443b1cc6c049884a6560f11c129,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2993500089343979095, guid: fcad1443b1cc6c049884a6560f11c129,
         type: 3}
       propertyPath: m_Controller
@@ -3716,6 +3711,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150597758737387634, guid: fcad1443b1cc6c049884a6560f11c129,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcad1443b1cc6c049884a6560f11c129, type: 3}
@@ -4851,11 +4851,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5794917859209338937, guid: 1dfa24fe1ed4a54428c9b41b335425ef,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 917980999088922131, guid: 1dfa24fe1ed4a54428c9b41b335425ef,
         type: 3}
       propertyPath: m_Controller
@@ -4870,6 +4865,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794917859209338937, guid: 1dfa24fe1ed4a54428c9b41b335425ef,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dfa24fe1ed4a54428c9b41b335425ef, type: 3}
@@ -6038,7 +6038,7 @@ MonoBehaviour:
   playerTwo: {fileID: 0}
   playerOneDeaths: 0
   playerTwoDeath: 0
-  waitTime: 0
+  waitTime: 10
   countDownTime: 10
   walkableTilesCount: 0
   currentGamestate: 0
