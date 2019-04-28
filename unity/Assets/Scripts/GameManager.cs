@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     private PlayerMovement playerOneControls;
     private PlayerMovement playerTwoControls;
 
+    private int tilesActivated; 
+
     
     [EventRef]
     public string showtiles;
@@ -57,6 +59,9 @@ public class GameManager : MonoBehaviour
     {
         MAINMENU,
         PLAYING,
+        PLAYING2,
+        PLAYING3,
+        PLAYING4,
         WINSCREEN,
     }
     public GameState currentGamestate;
@@ -93,6 +98,24 @@ public class GameManager : MonoBehaviour
             GameOver();
 
         }
+
+
+        if (tilesActivated > 9)
+        {
+            currentGamestate = GameState.PLAYING2;
+        }
+
+        if (tilesActivated > 18)
+        {
+            currentGamestate = GameState.PLAYING3;
+ 
+        }
+        
+        if (tilesActivated > 27)
+        {
+            currentGamestate = GameState.PLAYING3;
+ 
+        }
     }
 
     public void StartGame()
@@ -106,6 +129,8 @@ public class GameManager : MonoBehaviour
 
         LightUpTiles();
         walkableTilesCount = m_levelScript.walkableTiles.Count;
+
+        tilesActivated = 0; 
     }
 
 
@@ -128,6 +153,7 @@ public class GameManager : MonoBehaviour
         renderer.material.EnableKeyword("_EMISSION");
 
         FmodEvent.PlayOneShot(unlockTiles, transform, null);
+        tilesActivated++;
     }
 
     public void SteppedOnNonWalkableTile(Collider tile, PlayerMovement actor)
