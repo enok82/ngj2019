@@ -46,6 +46,48 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1520
+--- !u!114 &-8923484058392134975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  guid: b3f92346e8f1a4449d6f7b1b0130b221
+  Banks:
+  - {fileID: -124733566941874893}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 115862
+--- !u!114 &-8826895258741370133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chris\Desktop\NGJ 2019\ngj2019\FMOD_Banks\Desktop\Master.strings.bank
+  lastModified: 636920493711368446
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1086
+  Exists: 1
 --- !u!114 &-7213468178177325084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +296,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 819
+--- !u!114 &-1286180389125049477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/RevealTile
+  guid: 4b53436ec6defa41894dc76c97baa611
+  Banks:
+  - {fileID: -124733566941874893}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 819
 --- !u!114 &-448617982625838598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +342,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 115862
+--- !u!114 &-124733566941874893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chris\Desktop\NGJ 2019\ngj2019\FMOD_Banks\Desktop\Master.bank
+  lastModified: 636920493711338889
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 6293280
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,24 +374,24 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -3453148255616285948}
-  - {fileID: 3809304122706077570}
+  - {fileID: -8826895258741370133}
+  - {fileID: -124733566941874893}
   EditorEvents:
-  - {fileID: 7236732578266668386}
-  - {fileID: -448617982625838598}
-  - {fileID: 427658976815079325}
-  - {fileID: -9206616810439803803}
-  - {fileID: -2340102962030667540}
-  - {fileID: 3309351127840363506}
-  - {fileID: -4067482462008199966}
-  - {fileID: -7123602584527526364}
+  - {fileID: 3629480479228222790}
+  - {fileID: 3674034138470664572}
+  - {fileID: -1286180389125049477}
+  - {fileID: 7552090023543110209}
+  - {fileID: 2885372141380639257}
+  - {fileID: 6956911619903207770}
+  - {fileID: 8115296969334834921}
+  - {fileID: -8923484058392134975}
   EditorParameters:
-  - {fileID: 6236709279534337012}
+  - {fileID: 7358290119566606568}
   MasterBanks:
-  - {fileID: 3809304122706077570}
+  - {fileID: -124733566941874893}
   StringsBanks:
-  - {fileID: -3453148255616285948}
-  stringsBankWriteTime: 636920503320000000
+  - {fileID: -8826895258741370133}
+  stringsBankWriteTime: 636920493711368446
   cacheVersion: 3
 --- !u!114 &427658976815079325
 MonoBehaviour:
@@ -332,6 +416,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1000
+--- !u!114 &2885372141380639257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Test
+  guid: 538bcae78777fe41afdd353202dc5a25
+  Banks:
+  - {fileID: -124733566941874893}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 120
 --- !u!114 &2961818557777705566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +479,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1800
+--- !u!114 &3629480479228222790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Player/1/P1 Footsteps
+  guid: 013076c21a5e5a4d90295e4f1b2bd352
+  Banks:
+  - {fileID: -124733566941874893}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &3674034138470664572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/HideTiles
+  guid: 0e4c6d2062c57d49994487c0d4ba5d68
+  Banks:
+  - {fileID: -124733566941874893}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1520
 --- !u!114 &3809304122706077570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +624,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1000
+--- !u!114 &6956911619903207770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/WinGame
+  guid: 7177843ea516874399b6311819e6c654
+  Banks:
+  - {fileID: -124733566941874893}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7840
 --- !u!114 &7236732578266668386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,3 +670,66 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 120
+--- !u!114 &7358290119566606568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: MusicStates
+  m_EditorClassIdentifier: 
+  Name: MusicStates
+  Min: 0
+  Max: 6
+  Default: 0
+  Exists: 1
+--- !u!114 &7552090023543110209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerDIe
+  guid: 5099315490a6d44795c45c47dd9ecb57
+  Banks:
+  - {fileID: -124733566941874893}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1800
+--- !u!114 &8115296969334834921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/ShowTiles
+  guid: 95af16420885354b92810fd0bbd25b72
+  Banks:
+  - {fileID: -124733566941874893}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000

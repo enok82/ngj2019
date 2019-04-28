@@ -17,7 +17,7 @@ MonoBehaviour:
   HasPlatforms: 0
   sourceProjectPath: 
   SourceProjectPathUnformatted: 
-  SourceBankPathUnformatted: /Users/jeppe/Unity Stuff/ngj2019/FMOD_Banks/Desktop
+  SourceBankPathUnformatted: C:\Users\chris\Desktop\NGJ 2019\ngj2019\FMOD_Banks\Desktop
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
     Value: 0
   OverlaySettings:
   - Platform: 1
-    Value: 1
+    Value: 0
   - Platform: 2
     Value: 0
   - Platform: 20
