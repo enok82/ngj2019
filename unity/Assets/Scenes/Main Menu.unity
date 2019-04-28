@@ -2467,7 +2467,6 @@ GameObject:
   - component: {fileID: 960500525}
   - component: {fileID: 960500524}
   - component: {fileID: 960500523}
-  - component: {fileID: 960500526}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2482,7 +2481,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960500522}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &960500524
 Camera:
   m_ObjectHideFlags: 0
@@ -2540,19 +2539,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -8.137, y: 0, z: 0}
---- !u!114 &960500526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960500522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: 0
 --- !u!1001 &1000727283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5164,52 +5150,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37eee1774d649c94794a9696f310fc1d, type: 3}
---- !u!1 &1808593502
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1808593504}
-  - component: {fileID: 1808593503}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1808593503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808593502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5ae9a1da93e8452d83f1faf3c6fa5cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonHover: 
-  buttonClick: 
-  musicEvent: event:/Music
---- !u!4 &1808593504
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808593502}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 972, y: 497, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 72
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1869842268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6098,8 +6038,8 @@ MonoBehaviour:
   playerTwo: {fileID: 0}
   playerOneDeaths: 0
   playerTwoDeath: 0
-  waitTime: 10
-  countDownTime: 0
+  waitTime: 0
+  countDownTime: 10
   walkableTilesCount: 0
   currentGamestate: 0
   gameIsStarted: 0
