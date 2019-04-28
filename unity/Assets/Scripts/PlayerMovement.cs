@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         float walk = 0;
 
         float dash = Mathf.Max(Input.GetAxis(playerLeftDashAxis), Input.GetAxis(playerRightDashAxis));
-
+        
         switch (GameManager.Instance.playerControllerScheme)
         {
             case "A":
@@ -71,10 +71,11 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case "B":
                 turn = Input.GetAxis(playerHorizontalAxis);
-                walk = 2 * Input.GetAxis(playerVerticalAxis);
+                walk = -2 * Input.GetAxis(playerVerticalAxis);
 
                 break;
             default:
+                Debug.Log("Controller scheme not found");
                 break;
         }
         
