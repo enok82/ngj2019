@@ -17,8 +17,11 @@ public class GameManager : MonoBehaviour
     public GameObject playerTwo; 
 
     public int playerOneDeaths;
-    public int playerTwoDeath; 
-   
+    public int playerTwoDeath;
+
+    public string playerOneControllerScheme;
+    public string playerTwoControllerScheme;
+
     public event Action gameOverEvent;
     public event Action startGameEvent;
 
@@ -259,7 +262,31 @@ public class GameManager : MonoBehaviour
 
         
     }
- }
+
+    public void SetPlayerOneControllerScheme()
+    {
+        if (playerOneControllerScheme == "A")
+        {
+            playerOneControllerScheme = "B";
+        }
+        else
+        {
+            playerOneControllerScheme = "A";
+        }
+    }
+
+    public void SetPlayerTwoControllerScheme()
+    {
+        if (playerTwoControllerScheme == "A")
+        {
+            playerTwoControllerScheme = "B";
+        }
+        else
+        {
+            playerTwoControllerScheme = "A";
+        }
+    }
+}
 
 
    
