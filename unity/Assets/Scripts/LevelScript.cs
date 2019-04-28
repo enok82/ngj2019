@@ -20,6 +20,8 @@ public class LevelScript : MonoBehaviour
 
 	public Texture2D levelTexture;
 
+    public Texture2D[] levelTextures;
+
 	public float waitTime;
 
     public List<GameObject> walkableTiles;
@@ -50,7 +52,11 @@ public class LevelScript : MonoBehaviour
 
 	void LoadLevel ()
 	{
-		tileColors = new Color[levelWidth * levelHeight];
+        levelTexture = levelTextures[Random.Range(0,levelTextures.Length)];
+        levelWidth = levelTexture.width;
+        levelHeight = levelTexture.height;
+
+        tileColors = new Color[levelWidth * levelHeight];
 		tileColors = levelTexture.GetPixels ();
 
 		for (int z = 0; z < levelHeight; z++) 
